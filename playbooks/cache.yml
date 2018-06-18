@@ -1,0 +1,4 @@
+- hosts: cache
+  roles:
+    - role: debug
+      foo: cache playbook

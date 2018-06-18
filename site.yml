@@ -1,0 +1,8 @@
+# Master Playbook
+
+- import_playbook: playbooks/all.yml
+- import_playbook: playbooks/web.yml
+- import_playbook: playbooks/database.yml
+- import_playbook: playbooks/cache.yml
+- import_playbook: playbooks/message.yml
+- import_playbook: playbooks/monitor.yml
