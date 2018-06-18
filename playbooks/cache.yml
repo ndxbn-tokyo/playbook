@@ -1,4 +1,4 @@
 - hosts: cache
+  become: true
   roles:
-    - role: debug
-      foo: cache playbook
+    - role: redis

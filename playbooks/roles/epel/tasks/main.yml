@@ -1,4 +1,5 @@
 - name: install EPEL Repository
+  become: true
   yum:
     name: epel-release
   tags:
