@@ -1,0 +1,6 @@
+- name: install 'Development tools' package group
+  yum:
+    name: "@Development tools"
+  tags:
+    - insatall
+    - configuration

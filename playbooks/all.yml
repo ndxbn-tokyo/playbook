@@ -1,4 +1,6 @@
 - hosts: all
+  become: true
   roles:
-    - role: debug
-      foo: all playbook
+    - role: epel
+    - role: ius
+    - role: devel-tools

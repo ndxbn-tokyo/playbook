@@ -28,3 +28,12 @@ I think all files and/or directories which are used in CLI should be exists top 
 If there are NOT on top, user must exec with long args. e.g.`ansible-playbook -i inventories/local site.yml`, "inventories/" may be verbose. I don't want to type it.
 
 There are inventories directory, master playbook, and some configuration files on top of repository, you should not type sub-directory name in almost basic usage.
+
+# Misc
+## Tags
+
+- `install`
+  - `bootstrapping`
+  - `configuration`
+  - `orchestration`
+- `update`

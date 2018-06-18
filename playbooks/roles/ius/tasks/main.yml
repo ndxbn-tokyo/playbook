@@ -1,0 +1,6 @@
+- name: install IUS Repository
+  yum:
+    name: https://centos7.iuscommunity.org/ius-release.rpm
+  tags:
+    - insatall
+    - configuration
