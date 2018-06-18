@@ -1,0 +1,9 @@
+!.gitignore
+!.gitkeep
+
+## Ansible
+*.retry
+
+## Vagrant
+.vagrant/
+*.logs
