@@ -9,7 +9,7 @@ if [[ ! -d ${SSH_DIRECTORY_NAME} ]]; then
 	chmod 755 ${SSH_DIRECTORY_NAME}
 fi
 
-readonly PRIVATE_KEY_FILE="${SSH_DIRECTORY_NAME}/vagrant@localhost"
+readonly PRIVATE_KEY_FILE="${SSH_DIRECTORY_NAME}/id_ed25519"
 if [[ -e ${PRIVATE_KEY_FILE} ]]; then
 	echo ${PRIVATE_KEY_FILE} is exists. skip ssh-keygen.
 	exit 0
