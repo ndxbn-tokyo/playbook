@@ -9,6 +9,10 @@ Or Try it temporary, do only `vagrant up` via [Vagrant](https://www.vagrantup.co
 
 If you are Windows 10 user, you can use [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl).
 
+### Requirements for Developers
+
+- Ruby 2.0 or later
+
 ## Using
 ### Basic Usage
 **IMPORTANT: This will configuration and install on your localhost directory.**
@@ -37,3 +41,10 @@ There are inventories directory, master playbook, and some configuration files o
   - `configuration`
   - `orchestration`
 - `update`
+
+## Testing
+
+```bash
+bundle install
+rake
+```
