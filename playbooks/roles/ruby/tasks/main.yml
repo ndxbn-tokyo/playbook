@@ -1,0 +1,4 @@
+- name: install ruby lang
+  become: true
+  yum:
+    name: ruby

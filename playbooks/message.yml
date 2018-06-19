@@ -1,0 +1,4 @@
+- hosts: message
+  roles:
+    - role: debug
+      foo: message playbook
