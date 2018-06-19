@@ -7,7 +7,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :ansible_local,
                       playbook: "site.yml",
-                      config_file: "ansible.local.cfg",
                       inventory_path: "local",
                       limit: "all"
 end
