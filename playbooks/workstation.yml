@@ -1,0 +1,5 @@
+- hosts: workstation
+  become: true
+  roles:
+    - role: pip
+    - role: ruby

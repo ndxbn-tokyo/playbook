@@ -6,3 +6,4 @@
 - import_playbook: playbooks/cache.yml
 - import_playbook: playbooks/message.yml
 - import_playbook: playbooks/monitor.yml
+- import_playbook: playbooks/workstation.yml
