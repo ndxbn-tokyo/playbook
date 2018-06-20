@@ -4,3 +4,4 @@
     - role: epel
     - role: ius
     - role: devel-tools
+    - role: debug
