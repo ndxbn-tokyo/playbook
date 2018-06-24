@@ -1,6 +1,13 @@
 - hosts: all
   become: true
-  roles:
-    - role: epel
-    - role: ius
-    - role: devel-tools
+  tasks:
+    - name: install common packages & repositories
+      become: true
+      yum:
+        name:
+          - "@Development Tools"
+          - epel-release
+          - https://centos7.iuscommunity.org/ius-release.rpm
+      tags:
+        - insatall
+        - configuration
