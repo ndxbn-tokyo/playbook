@@ -1,0 +1,61 @@
+- name: disable SNAPSHOTTING
+  become: true
+  block:
+    - name: disable SNAPSHOTTING 00
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^save 900 1$'
+        line: '#save 900 1'
+        backrefs: true
+      notify:
+        - restart redis
+    - name: disable SNAPSHOTTING 01
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^save 300 10$'
+        line: '#save 300 10'
+        backrefs: true
+      notify:
+        - restart redis
+    - name: disable SNAPSHOTTING 02
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^save 60 10000$'
+        line: '#save 60 10000'
+        backrefs: true
+      notify:
+        - restart redis
+
+- name: enable UNIX domain socket
+  become: true
+  when: redis_unix_socket
+  block:
+    - name: enable UNIX domain socket 00
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^# unixsocket /tmp/redis.sock$'
+        line: 'unixsocket /run/redis/redis.sock'
+        backrefs: true
+      notify:
+        - restart redis
+    - name: enable UNIX domain socket 01
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^# unixsocketperm 700$'
+        line: 'unixsocketperm 755'
+        backrefs: true
+      notify:
+        - restart redis
+
+- name: disable TCP socket
+  become: true
+  when: redis_unix_socket
+  block:
+    - name: enable UNIX domain socket 00
+      lineinfile:
+        path: /etc/redis.conf
+        regexp: '^port 6379$'
+        line: 'port 0'
+        backrefs: true
+      notify:
+        - restart redis

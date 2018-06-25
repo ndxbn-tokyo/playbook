@@ -1,0 +1,3 @@
+# Use only UNIX domain socket.
+# If this parameter is true, TCP socket (127.0.0.1:6379) will be disabled.
+redis_unix_socket: true
