@@ -15,7 +15,7 @@ indent_size = 2
 [*.{sh,bash,zsh}]
 # nothing
 
-[{*.rb,Vagrantfile,Rakefile,Gemfile}]
+[Vagrantfile]
 indent_style = space
 indent_size = 2
 
