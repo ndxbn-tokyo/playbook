@@ -1,4 +1,0 @@
-- hosts: database
-  roles:
-    - role: debug
-      foo: database playbook

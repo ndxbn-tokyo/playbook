@@ -1,4 +1,0 @@
-- hosts: workstation
-  roles:
-    - role: pip
-    - role: ruby

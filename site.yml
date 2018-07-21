@@ -1,9 +1,39 @@
-# Master Playbook
+# bootstrapping
+- hosts: all
+  become: true
+  tasks:
+    - name: install common packages & repositories
+      become: true
+      yum:
+        name:
+          - "@Development Tools"
+          - epel-release
+          - https://centos7.iuscommunity.org/ius-release.rpm
+      tags:
+        - insatall
+        - configuration
 
-- import_playbook: playbooks/all.yml
-- import_playbook: playbooks/web.yml
-- import_playbook: playbooks/database.yml
-- import_playbook: playbooks/cache.yml
-- import_playbook: playbooks/message.yml
-- import_playbook: playbooks/monitor.yml
-- import_playbook: playbooks/workstation.yml
+# configuration
+- hosts: cache
+  roles:
+    - role: redis
+- hosts: database
+  roles:
+    - role: debug
+      foo: database playbook
+- hosts: message
+  roles:
+    - role: debug
+      foo: message playbook
+
+# orchestration
+- hosts: web
+  roles:
+    - role: debug
+      foo: web playbook
+
+#
+- hosts: monitor
+  roles:
+    - role: debug
+      foo: monitor playbook

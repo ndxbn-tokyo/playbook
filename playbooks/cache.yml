@@ -1,3 +1,0 @@
-- hosts: cache
-  roles:
-    - role: redis
