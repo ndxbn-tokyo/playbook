@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "centos/7"
+  config.vm.box = "ubuntu/xenial64"
+  config.disksize.size = "250GB"
 
   config.vm.provision :ansible_local,
                       playbook: "site.yml",
