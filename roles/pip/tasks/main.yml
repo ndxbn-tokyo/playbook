@@ -1,4 +1,0 @@
-- name: install pip
-  become: true
-  yum:
-    name: python2-pip

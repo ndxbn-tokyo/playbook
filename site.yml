@@ -1,39 +1,36 @@
-# bootstrapping
+#
 - hosts: all
   become: true
-  tasks:
-    - name: install common packages & repositories
-      become: true
-      yum:
-        name:
-          - "@Development Tools"
-          - epel-release
-          - https://centos7.iuscommunity.org/ius-release.rpm
-      tags:
-        - insatall
-        - configuration
+  roles:
+    - role: stub
+      msg: all
+  tags:
+    - bootstrapping
 
-# configuration
+#
 - hosts: cache
   roles:
-    - role: redis
+    - role: stub
+      msg: cache
+
 - hosts: database
   roles:
-    - role: debug
-      foo: database playbook
+    - role: stub
+      msg: database
+
 - hosts: message
   roles:
-    - role: debug
-      foo: message playbook
+    - role: stub
+      msg: message
 
-# orchestration
+#
 - hosts: web
   roles:
-    - role: debug
-      foo: web playbook
+    - role: stub
+      msg: web
 
 #
 - hosts: monitor
   roles:
-    - role: debug
-      foo: monitor playbook
+    - role: stub
+      msg: monitor
