@@ -25,6 +25,13 @@ ansible-galaxy install --roles-path galaxy_roles -r requirements.yml
 ansible-playbook -c local -i local playbook.yml
 ```
 
+### With Vagrant
+
+```bash
+vagrant plugin install vagrant-disksize
+vagrant up
+```
+
 # For Developers
 ## Tags
 
