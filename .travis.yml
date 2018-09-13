@@ -4,3 +4,7 @@ python:
   
 script:
   - ansible-lint site.yml
+
+#
+notifications:
+    slack: ndxbn:3Z4ySyvrvOZXedOpwXXIAYH1
